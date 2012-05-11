@@ -839,6 +839,8 @@ void VideoEditorVideoEncoder_reconfigureBitrate(VideoEditorVideoEncoder_Context*
             break;
         case M4ENCODER_kH263:
         case M4ENCODER_kMPEG4:
+            LOGV("No change in bitrate for H263, MPEG4\n");
+            break;
         default:
             LOGE("VideoEncoder_reconfigureBitrate : incorrect output format from app");
             CHECK(0);
