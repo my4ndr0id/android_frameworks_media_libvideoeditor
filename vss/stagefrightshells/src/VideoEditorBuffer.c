@@ -73,6 +73,9 @@ M4OSA_ERR VIDEOEDITOR_BUFFER_allocatePool(VIDEOEDITOR_BUFFER_Pool** ppool,
                             sizeof(VIDEOEDITOR_BUFFER_Buffer)*nbBuffers,
                             VIDEOEDITOR_BUFFER_EXTERNAL,
                             (M4OSA_Char*)("BUFFER_allocatePool: pNXPBuffer"));
+
+    memset(pool->pNXPBuffer, 0, (sizeof(VIDEOEDITOR_BUFFER_Buffer)*nbBuffers));
+
     if(M4OSA_NULL == pool->pNXPBuffer)
     {
         lerr = M4ERR_ALLOC;
